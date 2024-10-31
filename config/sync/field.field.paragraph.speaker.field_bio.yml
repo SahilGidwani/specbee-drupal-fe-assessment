@@ -1,0 +1,24 @@
+uuid: 896c3e60-76d8-41e6-9d7a-2cebfdf6ea05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bio
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.speaker
+  module:
+    - text
+id: paragraph.speaker.field_bio
+field_name: field_bio
+entity_type: paragraph
+bundle: speaker
+label: Bio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

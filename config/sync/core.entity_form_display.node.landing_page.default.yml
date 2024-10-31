@@ -1,19 +1,29 @@
-uuid: 6cda21d7-df2e-4386-a1dd-09bb165b7b8f
+uuid: 3c54810d-b4b6-4044-86d1-0ed0c3da5aee
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.layout_builder__layout
-    - node.type.page
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.layout_builder__layout
+    - node.type.landing_page
   module:
     - path
-_core:
-  default_config_hash: SfpLhPExzvR0MgFp0Wp7CrmgEnhcqQ-fXIWFhbf4ue0
-id: node.page.default
+    - text
+id: node.landing_page.default
 targetEntityType: node
-bundle: page
+bundle: landing_page
 mode: default
 content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10

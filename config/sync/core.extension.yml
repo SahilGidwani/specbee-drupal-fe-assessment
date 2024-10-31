@@ -16,6 +16,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   field: 0
   field_ui: 0
   file: 0
@@ -23,7 +24,9 @@ module:
   gin_login: 0
   gin_toolbar: 0
   image: 0
+  inline_block_title_automatic: 0
   layout_builder: 0
+  layout_builder_iframe_modal: 0
   layout_discovery: 0
   link: 0
   media: 0
@@ -44,6 +47,7 @@ module:
   update: 0
   user: 0
   views: 10
+  paragraphs: 11
   minimal: 1000
 theme:
   stark: 0
