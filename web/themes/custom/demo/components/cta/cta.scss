@@ -1,19 +1,19 @@
 .cta {
-  margin: 0;
+  display: inline-block;
   min-width: 405px;
+  margin: 0;
+  padding: 19px 0;
+  text-align: center;
   text-decoration: none;
   color: #fff;
-  background-color: #003FB4;
   border-radius: 10px;
-  display: inline-block;
-  text-align: center;
+  background-color: #003FB4;
   font-size: 20px;
   line-height: 20px;
-  padding: 19px 0px;
 }
 
 .cta:hover {
-  background-color: #28509b;
-  color: #fff;
   transition: all 0.3s ease;
+  color: #fff;
+  background-color: #28509b;
 }
