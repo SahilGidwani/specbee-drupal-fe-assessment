@@ -11,9 +11,11 @@ dependencies:
     - field.field.paragraph.speaker.field_social_drupal
     - field.field.paragraph.speaker.field_social_linkedin
     - field.field.paragraph.speaker.field_social_x
+    - image.style.speaker_thumbnail
     - paragraphs.paragraphs_type.speaker
   module:
     - link
+    - media
     - text
 id: paragraph.speaker.default
 targetEntityType: paragraph
@@ -22,14 +24,14 @@ mode: default
 content:
   field_bio:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content
   field_designation:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -37,7 +39,7 @@ content:
     region: content
   field_name:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -45,24 +47,26 @@ content:
     region: content
   field_organization:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
     region: content
   field_photo:
-    type: entity_reference_entity_view
-    label: above
+    type: media_thumbnail
+    label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: speaker_thumbnail
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content
   field_social_drupal:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -74,7 +78,7 @@ content:
     region: content
   field_social_linkedin:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -86,7 +90,7 @@ content:
     region: content
   field_social_x:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false

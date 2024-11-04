@@ -4,12 +4,30 @@ global:
     base:
       dist/css/base/base.css: {}
       dist/css/base/typography.css: {}
-    layout:
-      dist/css/base/layout/layout.css: {}
     component:
       dist/css/base/components/components.css: {}
   js:
     dist/js/main.js: {}
+
+splidejs:
+  css:
+    theme:
+      src/external/css/splide-core.min.css: {}
+      src/external/css/splide.min.css: {}
+      src/external/css/splide.default.min.css: {}
+  js:
+    src/external/js/splide.min.js: {}
+
+speakersSlider:
+  css:
+    theme:
+      dist/css/speakers-slider.css: {}
+  js:
+    dist/js/speakers-slider.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - demo/splidejs
 
 # Component styling
 card:
@@ -28,3 +46,9 @@ admin:
   css:
     theme:
       dist/css/admin/admin.css: { preprocess: false }
+
+# Extending libraries
+layout-extended:
+  css:
+    layout:
+      dist/css/base/layout.css: {}

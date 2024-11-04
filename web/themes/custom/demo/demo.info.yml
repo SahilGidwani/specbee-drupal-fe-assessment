@@ -5,6 +5,9 @@ package: Custom
 core_version_requirement: ^9|^10
 libraries:
   - demo/global
+libraries-extend:
+  olivero/global-styling:
+    - demo/layout-extended
 ckeditor_stylesheets:
   - dist/css/admin/ckeditor.css
 base theme: olivero

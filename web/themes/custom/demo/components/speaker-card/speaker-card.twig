@@ -1,0 +1,49 @@
+{% if photo %}
+	<div class="speaker-slider__item__photo">
+		{{ photo }}
+	</div>
+{% endif %}
+{% if name %}
+	<h3 class="speaker-slider__item__name">{{ name }}</h3>
+{% endif %}
+{% if designation %}
+	<h4 class="speaker-slider__item__designation">{{ designation }}</h4>
+{% endif %}
+{% if organization %}
+	<span class="speaker-slider__item__organization">{{ organization }}</span>
+{% endif %}
+
+<div class="speaker-details">
+	<div class="speaker-details__left-col">
+		<div class="speaker-details__photo">
+			{{ photo }}
+		</div>
+		<div class="speaker-details__meta">
+			{% if name %}
+				<h3 class="speaker-details__meta__name">{{ name }}</h3>
+			{% endif %}
+			{% if designation %}
+				<h4 class="speaker-details__meta__designation">{{ designation }}</h4>
+			{% endif %}
+			{% if organization %}
+				<span class="speaker-details__meta__organization">{{ organization }}</span>
+			{% endif %}
+			<div class="speaker-details__social-links">
+				{% if social_link_drupal %}
+					<a href="{{ social_link_drupal }}" target="_blank" class="speaker-details__social-links__drupal"></a>
+				{% endif %}
+				{% if social_link_x %}
+					<a href="{{ social_link_x }}" target="_blank" class="speaker-details__social-links__x"></a>
+				{% endif %}
+				{% if social_link_linkedin %}
+					<a href="{{ social_link_linkedin }}" target="_blank" class="speaker-details__social-links__linkedin"></a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="speaker-details__right-col">
+		<div class="speaker-details__bio">
+			{{ content.field_bio.0|raw }}
+		</div>
+	</div>
+</div>

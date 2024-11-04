@@ -1,0 +1,47 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Speaker Card
+description: Speaker card component.
+props:
+  type: object
+  required:
+    - name
+    - photo
+    - organization
+    - bio
+  libraryOverrides:
+    dependencies:
+      - core/drupal
+      - core/once
+  properties:
+    name:
+      type: string
+      title: Name
+      description: The name of the speaker
+      examples:
+        - John Doe
+        - Steven Smith
+    designation:
+      type: string
+      title: Designation
+    organization:
+      type: string
+      title: Organization
+    bio:
+      type: string
+      title: Bio
+    photo:
+      type: string
+      title: photo
+      format: uri
+    social_link_x:
+      type: string
+      title: Social Link - X
+      format: uri
+    social_link_drupal:
+      type: string
+      title: Social Link - Drupal
+      format: uri
+    social_link_linkedin:
+      type: string
+      title: Social Link - Linkedin
+      format: uri

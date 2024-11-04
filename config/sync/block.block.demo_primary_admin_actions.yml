@@ -9,7 +9,7 @@ _core:
 id: demo_primary_admin_actions
 theme: demo
 region: highlighted
-weight: -5
+weight: -6
 provider: null
 plugin: local_actions_block
 settings:

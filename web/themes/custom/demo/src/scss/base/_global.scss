@@ -3,7 +3,7 @@
 .dialog-off-canvas-main-canvas {
   position: relative;
 }
-  
+
 body {
   word-break: break-word;
   color: $color--black;
@@ -12,7 +12,7 @@ body {
   font-weight: $font-weight;
   -webkit-font-smoothing: antialiased;
 }
-  
+
 * {
   box-sizing: border-box;
 
@@ -20,4 +20,9 @@ body {
     outline-width: 0.0625rem;
     outline-offset: 0.125rem;
   }
+}
+
+.page-wrapper {
+  max-width: 100%;
+  background: var(--color--white);
 }

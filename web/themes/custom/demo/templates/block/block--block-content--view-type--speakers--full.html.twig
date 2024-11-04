@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Olivero's implementation to display a block.
+ *
+ * Available variables:
+ * - layout: String that will determine the layout of the block.
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    layout ? 'layout--' ~ layout|clean_class,
+    'speakers-block'
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+	{{ title_prefix }}
+	{% if content.field_title %}
+		<h2{{title_attributes.addClass('speakers-block__title')}}>{{ content.field_title.0 }}</h2>
+	{% endif %}
+	{{ title_suffix }}
+	{% if content.body %}
+		<p class="speakers-block__description">{{ content.body.0['#text'] }}</p>
+	{% endif %}
+	{{ content.field_speakers }}
+	{% if content.field_cta %}
+		{% if content.field_cta[0]['#url'].external %}
+			{% set url =  content.field_cta[0]['#url'].uri %}
+			{% set link_target = '_blank' %}
+		{% else %}
+			{% set url = path(content.field_cta[0]['#url'].routeName, content.field_cta[0]['#url'].routeParameters) %}
+			{% set link_target = '' %}
+			<a class="speakers-block__cta-link" href="{{ path(content.field_cta[0]['#url'].routeName, content.field_cta[0]['#url'].routeParameters) }}">{{ content.field_cta[0]['#title'] }}</a>
+		{% endif %}
+		<div class="speakers-block__cta-wrapper">
+		{% if content.field_footer_text %}
+		<div class="speaker-block__cta-footer-text">
+			<span>
+				{{ content.field_footer_text.0 }}
+			</span>
+		</div>
+		{% endif %}
+			{% embed 'demo:cta' with {
+		text: content.field_cta[0]['#title'],
+		href: url,
+		target: link_target
+	} %}{% endembed %}
+		</div>
+	{% endif %}
+</div>

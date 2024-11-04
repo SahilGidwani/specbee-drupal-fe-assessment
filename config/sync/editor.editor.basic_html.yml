@@ -1,0 +1,21 @@
+uuid: 64ddca5c-aac4-4a40-9bdd-a02babcb174d
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor5
+format: basic_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - underline
+      - strikethrough
+      - link
+  plugins: {  }
+image_upload:
+  status: false
